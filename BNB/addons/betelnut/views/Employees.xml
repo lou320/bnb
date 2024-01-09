@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="betelnut_employees_view_tree" model="ir.ui.view">
+        <field name="name">betelnut_employees_view_tree</field>
+        <field name="model">betelnut.employees</field>
+        <field name="arch" type="xml">
+            <tree string="betelnut_employees_tree">
+                <field name="name"/>
+                <field name="age" optional="hide"/>
+                <field name="phone"/>
+            </tree>
+        </field>
+    </record>
+        <record id="betelnut_employees_view_form" model="ir.ui.view">
+        <field name="name">betelnut_employees_view_form</field>
+        <field name="model">betelnut.employees</field>
+        <field name="arch" type="xml">
+            <form string="betelnut_employees_form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="age"/>
+                        <field name="gender"/>
+                        <field name="phone"/>
+                        <field name="address"/>
+
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="employees_action" model="ir.actions.act_window">
+        <field name="name">Employees</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">betelnut.employees</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+betelnut.access_betelnut_employees,access_betelnut_employees,betelnut.model_betelnut_employees,base.group_user,1,1,1,1
+betelnut.access_betelnut_workdone,access_betelnut_workdone,betelnut.model_betelnut_workdone,base.group_user,1,1,1,1

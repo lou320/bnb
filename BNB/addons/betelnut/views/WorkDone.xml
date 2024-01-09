@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="betelnut_workdone_view_tree" model="ir.ui.view">
+        <field name="name">betelnut_workdone_view_tree</field>
+        <field name="model">betelnut.workdone</field>
+        <field name="arch" type="xml">
+            <tree string="betelnut_workdone_tree">
+                <field name="worker"/>
+                <field name="workcomplete" string="Total Vast"/>
+                <field name="wage" />
+
+            </tree>
+        </field>
+    </record>
+        <record id="betelnut_workdone_view_form" model="ir.ui.view">
+        <field name="name">betelnut_workdone_view_form</field>
+        <field name="model">betelnut.workdone</field>
+        <field name="arch" type="xml">
+            <form string="betelnut_workdone_form">
+                <sheet>
+                    <div class="oe_title">
+                    <h1>
+                        <field name="worker" readonly="1"/>
+                    </h1>
+                </div>
+                    <group>
+                        <group>
+                            <field name="is_created" invisible="1"/>
+                            <field name="worker"  attrs="{'readonly': [('is_created', '=', True)]}"/>
+                            <field name="a_thone_thay_vass" string="အတုံးသေး" attrs="{'readonly': [('is_created', '=', True)], 'invisible': [('a_thone_thay_vass','=',0),('is_created', '=', True)]}"/>
+                            <field name="a_thone_gyi_vass" string="အတုံးကြီး" attrs="{'readonly': [('is_created', '=', True)], 'invisible': [('a_thone_gyi_vass','=',0),('is_created', '=', True)]}"/>
+                            <field name="a_shay_sate_vass" string="အရှည်စိတ်" attrs="{'readonly': [('is_created', '=', True)], 'invisible': [('a_shay_sate_vass','=',0),('is_created', '=', True)]}"/>
+                            <field name="a_ni_pwa_vass" string="အနီပွ" attrs="{'readonly': [('is_created', '=', True)], 'invisible': [('a_ni_pwa_vass','=',0),('is_created', '=', True)]}"/>
+                            <field name="workcomplete" string="Total Vast" readonly="1"/>
+                <field name="wage" readonly="1">
+                </field>
+                        </group>
+
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="workdone_action" model="ir.actions.act_window">
+        <field name="name">Workdone</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">betelnut.workdone</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    </data>
+</odoo>

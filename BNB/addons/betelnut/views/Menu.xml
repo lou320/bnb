@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+    <menuitem id="betelnut_root" name="Betelnut">
+        <!-- This Menu Item Must have a parent -->
+        <menuitem id="betelnut_categ" name="Betelnut">
+            <!-- This Menu Item must have a parent and an action -->
+            <menuitem id="betelnut_employees_categ" name="Employees" action="betelnut.employees_action" />
+            <menuitem id="workdone_categ" name="Workdone" action="betelnut.workdone_action"/>
+        </menuitem>
+    </menuitem>
+    <!-- This Menu Item must have a parent and an action -->
+
+</odoo>
